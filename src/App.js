@@ -20,11 +20,12 @@ var NoMatch = React.createClass({
 
 ReactDOM.render(
     (
-        <Router>
-            <Route path="/pacientes" component={Paciente} />
-            <Redirect from="/" to="/pacientes" />
-            <Route path="*" component={NoMatch} />
-        </Router>
+        <Paciente/>
+        //<Router>
+        //    <Route path="/pacientes" component={Paciente} />
+        //    <Redirect from="/" to="/pacientes" />
+        //    <Route path="*" component={NoMatch} />
+        //</Router>
     ),
     document.getElementById('main')
 );
