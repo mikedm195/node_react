@@ -10,31 +10,20 @@ var Alcoholismo = React.createClass({
             tipo: 'Abstemio'
         };
     },
-    chBoxChange: function(event){
-        var checked = event.target.value;
-        console.log(checked);
-        if(checked == 'on')
-            checked = 'off';            
-        else
-            checked = 'on';
-        checked = !checked;
-        //console.log(checked);
-        this.setState({embriaguez: checked}, function () {
-            console.log(this.state.embriaguez);
+    chBoxChange: function(event){        
+        this.setState({embriaguez: event.target.checked}, function () {            
+            this.calculaTipo();
         });
-        this.calculaTipo();
     },
     radioChange: function(event){
-        this.setState({ frecuencia: event.target.value }, function () {
-            console.log(this.state.frecuencia);
+        this.setState({ frecuencia: event.target.value }, function () {            
+            this.calculaTipo();
         });        
-        this.calculaTipo();
     },
     copasChange: function(event){
         this.setState({ copasPorOcasion: event.target.value }, function () {
-            console.log(this.state.copasPorOcasion);
+            this.calculaTipo();            
         });
-        this.calculaTipo();
     },
     calculaTipo: function(){
         var frecuencia = this.state.frecuencia;        
